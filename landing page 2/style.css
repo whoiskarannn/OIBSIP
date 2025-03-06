@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #f5f5f5;
+    color: #333;
+}
+header {
+    background: linear-gradient(135deg, #3498db, #8e44ad);
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.head{
+    height: max-content;
+    padding-bottom: 40px;
+    padding: 20px;
+    background:url(./assets/img.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.head h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+#heading{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+}
+.btn_primary {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #db3495ec;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background;
+}
+.btn_primary:hover {
+    background: #ff0095;
+}
+
+
+.middel_placer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}.course_container, .review_container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+}
+
+.course_card, .review_card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 280px;
+    height: max-content;
+}
+.CC_img{
+    width: 100%;
+    border-radius: 0px;
+}
+.CC_link ,.SL_link{
+    margin-top: 20px;
+    text-decoration: none;
+    color: #333;
+    margin-top: 12px;
+    font-size: large;
+}
+.CC_link:hover , .SL_link:hover , .review_card:hover{
+    color: #db34959a;
+}
+
+footer {
+    margin-top: 65vh;
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+.footer_links a, .contact a {
+    color: #f8c300;
+    text-decoration: none;
+    margin: 0 10px;
+}
+.footer_links a:hover, .contact a:hover {
+    text-decoration: underline;
+}
