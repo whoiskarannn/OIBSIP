@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 400px;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .input-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        .input-group input {
+            flex: 1;
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            text-align: center;
+        }
+        .input-group button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 12px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .input-group button:hover {
+            background: #0056b3;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        #result {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 15px;
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2><i class="fas fa-thermometer-half"></i> Temperature Converter</h2>
+        
+        <div class="input-group">
+            <input type="text" id="temperature" placeholder="Enter Temperature">
+            <button onclick="toggleUnit()" id="toggleBtn"><i class="fas fa-temperature-high"></i> °C</button>
+        </div>
+
+        <button onclick="convertTemperature()"><i class="fas fa-sync-alt"></i> Convert</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        let inputUnit = "celsius";  // Default input unit is Celsius
+
+        function toggleUnit() {
+            let toggleBtn = document.getElementById("toggleBtn");
+            
+            if (inputUnit === "celsius") {
+                inputUnit = "fahrenheit";
+                toggleBtn.innerHTML = '<i class="fas fa-temperature-low"></i> °F';
+            } else {
+                inputUnit = "celsius";
+                toggleBtn.innerHTML = '<i class="fas fa-temperature-high"></i> °C';
+            }
+        }
+
+        function convertTemperature() {
+            let temp = document.getElementById("temperature").value;
+            let result = document.getElementById("result");
+
+            if (isNaN(temp) || temp.trim() === "") {
+                result.innerHTML = "❌ Please enter a valid number.";
+                return;
+            }
+
+            temp = parseFloat(temp);
+            let convertedTemp = 0;
+
+            if (inputUnit === "celsius") {
+                convertedTemp = (temp * 9/5) + 32;
+                result.innerHTML = `🌡️ ${temp}°C = ${convertedTemp.toFixed(2)}°F`;
+            } else {
+                convertedTemp = (temp - 32) * 5/9;
+                result.innerHTML = `🌡️ ${temp}°F = ${convertedTemp.toFixed(2)}°C`;
+            }
+        }
+    </script>
+
+</body>
+</html>
