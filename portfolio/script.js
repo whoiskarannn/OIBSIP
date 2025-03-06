@@ -7,10 +7,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (sectionPos < screenPos) {
             projectSection.classList.add("visible");
-            window.removeEventListener("scroll", revealOnScroll); // Run only once
+            window.removeEventListener("scroll", revealOnScroll); 
         }
     }
 
     window.addEventListener("scroll", revealOnScroll);
-    revealOnScroll(); // Check on page load in case it's already visible
+    revealOnScroll(); 
 });
